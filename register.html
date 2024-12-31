@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>BVM Alumni Member Registration</title>
+<link rel="stylesheet" type="text/css" href="s/regstyle.css">
+<script>
+  function validateForm() {
+    var gender = document.getElementById("selectGender").value;
+    var branch = document.getElementById("selectBranch").value;
+    var session = document.getElementById("selectSession").value;
+    var password = document.getElementById("password").value;
+
+    if (gender === "Gender" || branch === "Branch" || session === "Session") {
+      alert("Please fill in all the required fields.");
+      return false;
+    }
+
+    if (password.length < 8) {
+      alert("Password should be at least 8 characters long.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+</head>
+<body>
+<div class="register_wrapper">
+	<div class="register_container">
+		<h1>Register Now!</h1>
+
+<style>
+
+hr{
+/*background: linear-gradient(0.25turn, #3f87a6, #ebf8el, #f69d3c);*/
+
+background: linear-gradient(100deg,black,whitesmoke);
+height: 60vh;
+}
+</style>
+  <form class="register_form" action="registration_status.php" method="POST" onsubmit="return validateForm()">
+    <input type="text" placeholder="Full Name" name="pi_name" required>
+    <select id="selectGender" name="pi_gender" required>
+      <option disabled selected>Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+    <input type="text" placeholder="Registration Number" name="pi_register" required>
+    <select id="selectBranch" name="pi_branch" required>
+      <option disabled selected>Branch</option>
+      <option>BA</option>
+      <option>Bcom F&T</option>
+      <option>Bsc Maths</option>
+      <option>Bcom CA</option>
+      <option>BSW</option>
+      <option>BCA</option>
+    </select>
+    <select id="selectSession" name="pi_session" required>
+      <option disabled selected>Session</option>
+      <option>2011-2014</option>
+      <option>2012-2015</option>
+      <option>2013-2016</option>
+      <option>2014-2017</option>
+      <option>2015-2018</option>
+      <option>2016-2019</option>
+      <option>2017-2020</option>
+      <option>2018-2021</option>
+      <option>2019-2022</option>
+      <option>2020-2023</option>
+      <option>2021-2024</option>
+    </select>
+    <input type="email" placeholder="Email" name="pi_email" required>
+    <input type="text" placeholder="Mobile Number" name="pi_mobile" id="mobile" maxlength="10" pattern="[0-9]{10}" required>
+    <input type="password" placeholder="Password" name="pi_password" id="password" required>
+    <button type="submit" name="register" formaction="registration_status.php">Register</button>
+    <button><a href="index.php">Register Later</a></button>
+  </form>
+</div>
+</body>
+</html>
